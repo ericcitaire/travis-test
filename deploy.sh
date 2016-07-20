@@ -9,6 +9,9 @@ build_dir="${PWD}/target"
 encrypted_key="${encrypted_6b7ea0692d18_key}"
 encrypted_iv="${encrypted_6b7ea0692d18_iv}"
 
+git config --global user.email "build@travis-ci.org"
+git config --global user.name "Travis-CI"
+
 openssl aes-256-cbc -K "${encrypted_key}" -iv "${encrypted_iv}" -in id_rsa.enc -out id_rsa -d
 chmod 400 id_rsa
 
@@ -24,7 +27,7 @@ git clone "git@github.com:${organization}/${site_repo}.git"
 cd "${site_repo}"
 
 if [ -d demo ] ; then
-  rm -rf demo
+  git rm demo
 fi
 mkdir demo
 cd demo
