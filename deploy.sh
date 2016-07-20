@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -e
 
 organization="ericcitaire"
 project_repo="test-travis"
@@ -35,7 +35,7 @@ git clone "git@github.com:${organization}/${site_repo}.git"
 cd "${site_repo}"
 
 if [ -d demo ] ; then
-  git rm demo
+  git rm -r demo
 fi
 mkdir demo
 cd demo
