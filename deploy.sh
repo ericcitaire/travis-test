@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 organization="ericcitaire"
 project_repo="test-travis"
 site_repo="test-travis-site"
@@ -11,6 +13,7 @@ encrypted_iv="${encrypted_6b7ea0692d18_iv}"
 
 git config --global user.email "build@travis-ci.org"
 git config --global user.name "Travis-CI"
+git config --global push.default simple
 
 openssl aes-256-cbc -K "${encrypted_key}" -iv "${encrypted_iv}" -in id_rsa.enc -out id_rsa -d
 chmod 400 id_rsa
