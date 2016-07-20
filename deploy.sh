@@ -6,6 +6,7 @@ organization="ericcitaire"
 project_repo="test-travis"
 site_repo="test-travis-site"
 
+
 if [ "${TRAVIS_REPO_SLUG}" -ne "${organization}/${project_repo}" ] ; then
   echo "Not the official repo, skipping the deployment."
   exit 0
