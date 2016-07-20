@@ -31,7 +31,7 @@ cd demo
 
 unzip "${build_dir}/travis-test-1.0-SNAPSHOT.war" -x "META-INF/*" "WEB-INF/*"
 
-git add demo
+git add .
 git commit -m "Update demo"
 git push
 
